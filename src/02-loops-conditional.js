@@ -10,7 +10,11 @@
  */
 
 function isEven(number) {
-
+        if (number % 2 === 0) {
+            return true;
+        } else {
+            return false;
+        }
 }
 
 /**
@@ -27,7 +31,11 @@ function isEven(number) {
  */
 
 function isWithinRange(n, min, max) {
-
+    if (n >= min && n <= max) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /**
@@ -43,7 +51,11 @@ function isWithinRange(n, min, max) {
  */
 
 function stringContainsBa(string) {
-
+    if(string.toLowerCase().includes("ba")){
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
@@ -57,8 +69,24 @@ function stringContainsBa(string) {
  * const result = sumOfDigitsWithPosition(1234); // result will be 1^1 + 2^2 + 3^3 + 4^4 = (1) + (2 * 2) + (3 * 3 * 3) + (4 * 4 * 4 * 4) =  1 + 4 + 27 + 256 = 288
  * const result = sumOfDigitsWithPosition(52); // result will be 5^1 + 2^2 = 5 + (2 * 2) = 5 + 4 = 9
  */
+console.log(sumOfDigitsWithPosition())
 function sumOfDigitsWithPosition(num) {
-
+    let totalSum = 0;
+    if (typeof(num) === "number") {
+        const numberString = num.toString();
+        const digits = numberString.split("");
+        digits.forEach((digit, index) => {
+            const digitNum = parseInt(digit, 10);
+            totalSum += (digitNum ** (index+1));
+        })
+    } else if (typeof(num) === "string") {
+        const digits = num.split("");
+        digits.forEach((digit, index) => {
+            const digitNum = parseInt(digit, 10);
+            totalSum += (digitNum ** (index+1));
+        })
+    }
+    return totalSum;
 }
 
 

@@ -1,4 +1,4 @@
-function testFunction() {
+    function testFunction() {
     describe("04-functions - generateMessage", function () {
 
         it("should return a personalized message based on the user's name and age", function () {
